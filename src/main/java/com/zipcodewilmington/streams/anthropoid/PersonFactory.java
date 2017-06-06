@@ -39,7 +39,10 @@ public final class PersonFactory {
      * @return - ArrayList of Person objects
      */ // TODO
     public static List<Person> createPersonList(int listSize) {
-        return null;
+        return Stream
+                .generate(PersonFactory::createRandomPerson)
+                .limit(listSize)
+                .collect(Collectors.toList());
     }
 
 
@@ -48,7 +51,10 @@ public final class PersonFactory {
      * @return - Array of Person objects
      */ // TODO
     public static Person[] createPersonArray(int arrayLength) {
-        return null;
+        return Stream
+                .generate(PersonFactory::createRandomPerson)
+                .limit(arrayLength)
+                .toArray(Person[]::new);
     }
 
 
@@ -58,6 +64,8 @@ public final class PersonFactory {
      * @return - Stream representation of collection of Person objects
      */ // TODO
     public static Stream<Person> createPersonStream(int streamCount) {
-        return null;
+        return Stream
+                .generate(PersonFactory::createRandomPerson)
+                .limit(streamCount);
     }
 }
