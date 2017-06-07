@@ -22,9 +22,9 @@ public class StreamFilter {
     public StreamFilter() {
 
         this(PersonFactory.createPersonStream(100), RandomUtils.createCharacter('A', 'Z'));
-//        for (Person p: personStream.toArray(Person[]::new)) {
-//            System.out.println(p.getName() + " filter Char = " + this.startingCharacter);
-//        }
+        // for (Person p: personStream.toArray(Person[]::new)) {
+        //     System.out.println(p.getName() + " filter Char = " + this.startingCharacter);
+        // } /* not finding ANY palindromes */
     }
 
     /**
